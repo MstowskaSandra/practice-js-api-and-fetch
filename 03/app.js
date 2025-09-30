@@ -28,6 +28,10 @@ const span = document.querySelector('span');
 btn.addEventListener('click', clickBtn);
 
 function clickBtn() {
-    span.innerText = `${apiData.dns.ip}`;
+    if (apiData && apiData.dns && apiData.dns.ip) {
+        span.innerText = `${apiData.dns.ip}`;
+    } else {
+        span.innerText = 'Dane jeszcze nie są pobrane.';
+    }
 } 
 
