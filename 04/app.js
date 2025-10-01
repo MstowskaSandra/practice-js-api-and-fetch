@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const key = 'f5662bc59e904427ae9be3b4822d89fe';
 
-
 function handleSubmit(event) {
     event.preventDefault();
     const { latitude, longitude } = getInputCoordinates();
@@ -41,6 +40,9 @@ function fetchWeather(latitude, longitude) {
             return Promise.reject(resp);
         });
 }
+
+/*Kiedyś dostawałam ciągłe uwagi, że nie powinno być kilku return w kodzie. Bardzo proszę żebyś w CR krótko
+ dał mi znać czy taki kod jest w porządku i czy mieści się w dobrych praktykach. Dzięki! :) */
 
 function updateWeatherUI(latitude, longitude, apiData) {
     const weatherLat = document.querySelector('.weather__lat');
